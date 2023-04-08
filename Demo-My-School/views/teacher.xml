@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record model ="ir.ui.view" id="view_teacher_tree">
+            <field name="name">Teacher list</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <tree string="Teacher list">
+                    <field name="_id"/>
+                    <field name="name"/>
+                    <field name="department"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="schoolteacher_form_view" model="ir.ui.view">
+            <field name="name">teacher.form.view</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <form>
+                    <h1 style="color: white;background-color:#71639e;text-align: center;">Teacher Profile</h1>
+                    <sheet>
+
+                     <group>
+                        <field name="image" widget="image" class ="oe_avatar"/>
+                        <group>
+                              <field name="_id"/>
+                              <field name="name"/>
+                              <field name="department"/>
+
+                         </group>
+
+                          <group>
+                              <field name="email"/>
+                              <field name="phone"/>
+                              <field name="gender"/>
+                              <field name="birth_date"/>
+
+                         </group>
+
+                     </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="open_view_teacher_tree" model="ir.actions.act_window">
+            <field name="name">Teacher List</field>
+<!--            <field name="type">ir.actions.act_window</field>-->
+            <field name="res_model">school.teacher</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

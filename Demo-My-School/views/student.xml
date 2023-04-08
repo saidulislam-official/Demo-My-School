@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+    <!-- this view see after data import -->
+        <record model="ir.ui.view" id="view_student_tree">
+            <field name="name">Student List</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student List">
+                    <field class="text-primary bold" name="_id"/>
+                    <field class="text-danger" name="name"/>
+                    <field class="text-danger" name="email"/>
+
+                    <field class="text-danger" name="phone"/>
+                    <field class="primary" name="gender"/>
+                    <field class="text-danger" name="birth_date"/>
+                    <field class="text-danger" name="address"/>
+                </tree>
+            </field>
+        </record>
+        <!-- end -->
+        <!--start This data see what field i add  -->
+         <record id="school_form_view" model="ir.ui.view">
+            <field name="name">school.form.view</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <form>
+                     <h1 style="color: white;background-color:#71639e;text-align: center;">Student Profile</h1>
+                    <sheet>
+
+                     <group>
+                        <field name="image" widget="image" class ="oe_avatar"/>
+                        <group>
+                              <field name="_id"/>
+                              <field name="name"/>
+                              <field name="email"/>
+                         </group>
+
+                          <group>
+                              <field name="phone"/>
+                              <field name="gender"/>
+                              <field name="birth_date"/>
+                         </group>
+                            <group>
+                                <field name="address"/>
+                            </group>
+
+                     </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--end -->
+        <record id="open_view_student_tree" model="ir.actions.act_window">
+            <field name="name">Student List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                 <p class="o_view_nocontent_smiling_face">
+                     No Record Found!
+                 </p>
+            </field>
+        </record>
+    </data>
+</odoo>

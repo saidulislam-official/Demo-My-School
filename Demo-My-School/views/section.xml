@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model ="ir.ui.view" id="view_section_tree">
+            <field name="name">Section list</field>
+            <field name="model">school.section</field>
+            <field name="arch" type="xml">
+                <tree string="Section">
+
+                    <field name="name"/>
+                    <field name="code"/>
+
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="schoolsection_form_view" model="ir.ui.view">
+            <field name="name">section.form.view</field>
+            <field name="model">school.section</field>
+            <field name="arch" type="xml">
+
+                <form>
+                     <h1 style="color: white;background-color:#71639e;text-align: center;">Section Details</h1>
+                    <sheet>
+
+                     <group>
+
+                        <group>
+                              <field name="name"/>
+                              <field name="code"/>
+                         </group>
+
+                     </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="open_view_section_tree" model="ir.actions.act_window">
+            <field name="name">Sections</field>
+<!--            <field name="type">ir.actions.act_window</field>-->
+            <field name="res_model">school.section</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

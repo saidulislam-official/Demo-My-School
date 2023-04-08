@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model ="ir.ui.view" id="view_registration_tree">
+            <field name="name">Registration</field>
+            <field name="model">school.registration</field>
+            <field name="arch" type="xml">
+                <tree string="Registration">
+
+                    <field name="section_id"/>
+                    <field name="course_id"/>
+                    <field name="teacher_id"/>
+                    <field name="school_ids"/>
+
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="schoolregistration_form_view" model="ir.ui.view">
+            <field name="name">registration.form.view</field>
+            <field name="model">school.registration</field>
+            <field name="arch" type="xml">
+
+                <form>
+                     <h1 style="color: white;background-color:#71639e;text-align: center;">Registration Details</h1>
+                    <sheet>
+
+                     <group>
+
+                        <group>
+                              <field name="section_id"/>
+                              <field name="course_id"/>
+                              <field name="teacher_id"/>
+                              <field name="school_ids"/>
+                         </group>
+
+                     </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="open_view_registration_tree" model="ir.actions.act_window">
+            <field name="name">Registration Information</field>
+<!--            <field name="type">ir.actions.act_window</field>-->
+            <field name="res_model">school.registration</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
